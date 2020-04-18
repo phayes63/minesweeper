@@ -32,9 +32,12 @@ class Board
     def render
         puts ""
         puts "Minesweeper".center(20)
-        puts ""
         puts "-" * 20
-        puts @grid.map { |row| row.map { |tile| tile.face.rjust(2) }.join }
+        puts " 0 1 2 3 4 5 6 7 8"
+        (0..8).each do |row_idx|
+            puts row_idx.to_s
+            @grid.each { |row| print row[row_idx].face.rjust(2)}
+        end
         puts "-" * 20
     end
 
@@ -52,7 +55,7 @@ class Board
         count += 1 if self.valid_down_left_of_tile(row, col)
         count += 1 if self.valid_up_right_of_tile(row, col)
         count += 1 if self.valid_up_left_of_tile(row, col)
-        return count if count > 0
+        return count
     end
 
     def valid_right_of_tile(row, col)
@@ -88,21 +91,85 @@ class Board
     end
 
     # STILL WORKING ON FIGURING THIS OUT...
-    # def reveal(row, col)
-    #     next_row = row + 1
-    #     prev_row = row - 1
-    #     next_col = col + 1
-    #     prev_col = col - 1
-    #     self[row, col].reveal
+    def reveal(row, col)
+        self[row, col].reveal
+        search_row(row, col)
+        search_col(row, col)
+        search_diagonal(row, col)
+    end
 
-    #     if self.bomb_count(next_row, col) > 0 && next_row != 8 && self[next_row, col]
-    #         self[next_row, col].proximity(bomb_count(next_row, col))
-    #     else
-    #         self[next_row, col].reveal
-    #         self.reveal(next_row, col)
-    #     end
-    # end
+    def search_row(row, col)
+        (row+1...8).each do |next_row|
+            if bomb_count(next_row, col) > 0
+                self[next_row, col].proximity(bomb_count(next_row, col))
+                break
+            else
+                self[next_row, col].reveal if self[next_row, col].is_bomb == false
+            end
+        end
+        (0...row).to_a.reverse.each do |last_row|
+            if bomb_count(last_row, col) > 0
+                self[last_row, col].proximity(bomb_count(last_row, col))
+                break
+            else
+                self[last_row, col].reveal if self[last_row, col].is_bomb == false
+            end
+        end
+    end
 
+    def search_col(row, col)
+        (col+1...8).each do |next_col|
+            if bomb_count(row, next_col) > 0
+                self[row, next_col].proximity(bomb_count(row, next_col))
+                break
+            else
+                self[row, next_col].reveal if self[row, next_col].is_bomb == false
+            end
+        end
+        (0...col).to_a.reverse.each do |last_col|
+            if bomb_count(row, last_col) > 0
+                self[row, last_col].proximity(bomb_count(row, last_col))
+                break
+            else
+                self[row, last_col].reveal if self[row, last_col].is_bomb == false
+            end
+        end
+    end
+
+    def search_diagonal(row, col)
+        (row+1...8).each do |next_row|
+            if bomb_count(next_row, col+1) > 0 && col != 8
+                self[next_row, col+1].proximity(bomb_count(next_row, col+1))
+                break
+            else
+                self[next_row, col+1].reveal if self[next_row, col+1].is_bomb == false
+            end
+        end
+        (row+1...8).each do |next_row|
+            if bomb_count(next_row, col-1) > 0 && col != 0
+                self[next_row, col-1].proximity(bomb_count(next_row, col-1))
+                break
+            else
+                self[next_row, col-1].reveal if self[next_row, col-1].is_bomb == false
+            end
+        end
+        (0...row).to_a.reverse.each do |last_row|
+            if bomb_count(last_row, col+1) > 0 && col != 8
+                self[last_row, col+1].proximity(bomb_count(last_row, col+1))
+                break
+            else
+                self[last_row, col+1].reveal if self[last_row, col+1].is_bomb == false
+            end
+        end
+        (0...row).to_a.reverse.each do |last_row|
+            if bomb_count(last_row, col-1) > 0 && col != 0
+                self[last_row, col-1].proximity(bomb_count(last_row, col-1))
+                break
+            else
+                self[last_row, col-1].reveal if self[last_row, col-1].is_bomb == false
+            end
+        end
+    end
 end
 
 if $PROGRAM_NAME == __FILE__
@@ -110,9 +177,9 @@ if $PROGRAM_NAME == __FILE__
     b.render
     # b.reveal
     # b.render
-    b.reveal(1, 4)
+    # puts b.bomb_count(1, 4)
     # puts b.bomb_count(0, 5)
-    # puts b.bomb_count(3, 3)
+    b.reveal(3, 3)
     # puts b.bomb_count(5, 3)   
     # puts b.bomb_count(7, 6)
     b.render
