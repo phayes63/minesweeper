@@ -2,7 +2,7 @@ require "colorize"
 
 class Tile
 
-    attr_reader :face
+    attr_reader :face, :is_bomb
 
     def initialize(is_bomb, start_symbol)
         @start_symbol = start_symbol
@@ -22,9 +22,8 @@ class Tile
         @flagged[0] == true ? @face = "F" : @start_symbol
     end 
 
-    def proximity
-        @face = (1..8).to_a
-        # Not sure about this yet...
+    def proximity(bomb_count)
+        @face = bomb_count.to_s
     end
 
     def make_bomb
