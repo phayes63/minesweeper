@@ -2,7 +2,7 @@ require "colorize"
 
 class Tile
 
-    attr_reader :face, :is_bomb
+    attr_reader :face, :is_bomb, :revealed
 
     def initialize(is_bomb, start_symbol)
         @start_symbol = start_symbol

@@ -33,10 +33,11 @@ class Board
         puts ""
         puts "Minesweeper".center(20)
         puts "-" * 20
-        puts " 0 1 2 3 4 5 6 7 8"
+        puts "  0 1 2 3 4 5 6 7 8"
         (0..8).each do |row_idx|
-            puts row_idx.to_s
-            @grid.each { |row| print row[row_idx].face.rjust(2)}
+            print row_idx.to_s
+            @grid.each { |row| print row[row_idx].face.rjust(2) }
+            puts "\n"
         end
         puts "-" * 20
     end
@@ -100,11 +101,14 @@ class Board
 
     def search_row(row, col)
         (row+1...8).each do |next_row|
+            break if self[next_row, col].is_bomb == true
             if bomb_count(next_row, col) > 0
                 self[next_row, col].proximity(bomb_count(next_row, col))
                 break
             else
                 self[next_row, col].reveal if self[next_row, col].is_bomb == false
+                self.search_col(next_row, col) if self[next_row, col].is_bomb == false
+                self.search_diagonal(next_row, col) if self[next_row, col].is_bomb == false
             end
         end
         (0...row).to_a.reverse.each do |last_row|
@@ -113,6 +117,8 @@ class Board
                 break
             else
                 self[last_row, col].reveal if self[last_row, col].is_bomb == false
+                self.search_col(last_row, col) if self[last_row, col].is_bomb == false
+                self.search_diagonal(last_row, col) if self[last_row, col].is_bomb == false
             end
         end
     end
@@ -169,6 +175,18 @@ class Board
                 self[last_row, col-1].reveal if self[last_row, col-1].is_bomb == false
             end
         end
+    end
+
+    def win?
+        @grid.all? { |row| row.all? { |tile| tile.revealed && !tile.is_bomb } }
+    end
+
+    def lose?(row, col)
+        self[row, col].is_bomb
+    end
+
+    def game_over?
+        self.win? || self.lose?
     end
 end
 
