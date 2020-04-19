@@ -177,6 +177,10 @@ class Board
         end
     end
 
+    def reveal_all
+        @grid.each { |row| row.each { |tile| tile.reveal if tile.revealed == false } }  
+    end
+
     def win?
         @grid.all? { |row| row.all? { |tile| tile.revealed && !tile.is_bomb } }
     end
@@ -187,6 +191,8 @@ class Board
 
     def game_over?
         self.win? || self.lose?
+        self.reveal_all
+        self.render
     end
 end
 
@@ -200,5 +206,7 @@ if $PROGRAM_NAME == __FILE__
     b.reveal(3, 3)
     # puts b.bomb_count(5, 3)   
     # puts b.bomb_count(7, 6)
+    b.render
+    b.reveal_all
     b.render
 end
