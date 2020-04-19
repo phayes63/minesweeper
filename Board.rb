@@ -101,7 +101,7 @@ class Board
 
     def search_row(row, col)
         (row+1...8).each do |next_row|
-            break if self[next_row, col].is_bomb == true
+            break if row == 8 || self[next_row, col].is_bomb
             if bomb_count(next_row, col) > 0
                 self[next_row, col].proximity(bomb_count(next_row, col))
                 break
@@ -112,6 +112,7 @@ class Board
             end
         end
         (0...row).to_a.reverse.each do |last_row|
+            break if row == 0 || self[last_row, col].is_bomb
             if bomb_count(last_row, col) > 0
                 self[last_row, col].proximity(bomb_count(last_row, col))
                 break
@@ -125,6 +126,7 @@ class Board
 
     def search_col(row, col)
         (col+1...8).each do |next_col|
+            break if col == 8 || self[row, next_col].is_bomb
             if bomb_count(row, next_col) > 0
                 self[row, next_col].proximity(bomb_count(row, next_col))
                 break
@@ -133,6 +135,7 @@ class Board
             end
         end
         (0...col).to_a.reverse.each do |last_col|
+            break if col == 0 || self[row, last_col].is_bomb
             if bomb_count(row, last_col) > 0
                 self[row, last_col].proximity(bomb_count(row, last_col))
                 break
@@ -144,6 +147,7 @@ class Board
 
     def search_diagonal(row, col)
         (row+1...8).each do |next_row|
+            break if row == 8 || col == 8 || self[next_row, col + 1].is_bomb
             if bomb_count(next_row, col+1) > 0 && col != 8
                 self[next_row, col+1].proximity(bomb_count(next_row, col+1))
                 break
@@ -152,6 +156,7 @@ class Board
             end
         end
         (row+1...8).each do |next_row|
+        break if row == 8 || col == 8 || self[next_row, col - 1].is_bomb
             if bomb_count(next_row, col-1) > 0 && col != 0
                 self[next_row, col-1].proximity(bomb_count(next_row, col-1))
                 break
@@ -160,6 +165,7 @@ class Board
             end
         end
         (0...row).to_a.reverse.each do |last_row|
+            break if row == 8 || col == 8 || self[last_row, col + 1].is_bomb
             if bomb_count(last_row, col+1) > 0 && col != 8
                 self[last_row, col+1].proximity(bomb_count(last_row, col+1))
                 break
@@ -168,6 +174,7 @@ class Board
             end
         end
         (0...row).to_a.reverse.each do |last_row|
+            break if row == 8 || col == 8 || self[last_row, col - 1].is_bomb
             if bomb_count(last_row, col-1) > 0 && col != 0
                 self[last_row, col-1].proximity(bomb_count(last_row, col-1))
                 break
@@ -185,28 +192,26 @@ class Board
         @grid.all? { |row| row.all? { |tile| tile.revealed && !tile.is_bomb } }
     end
 
-    def lose?(row, col)
-        self[row, col].is_bomb
+    def lose?
+        @grid.any? { |row| row.any? { |tile| tile.is_bomb && tile.revealed }}
     end
 
     def game_over?
         self.win? || self.lose?
-        self.reveal_all
-        self.render
     end
 end
 
-if $PROGRAM_NAME == __FILE__
-    b = Board.new
-    b.render
-    # b.reveal
-    # b.render
-    # puts b.bomb_count(1, 4)
-    # puts b.bomb_count(0, 5)
-    b.reveal(3, 3)
-    # puts b.bomb_count(5, 3)   
-    # puts b.bomb_count(7, 6)
-    b.render
-    b.reveal_all
-    b.render
-end
+# if $PROGRAM_NAME == __FILE__
+#     b = Board.new
+#     b.render
+#     # b.reveal
+#     # b.render
+#     # puts b.bomb_count(1, 4)
+#     # puts b.bomb_count(0, 5)
+#     b.reveal(3, 3)
+#     # puts b.bomb_count(5, 3)   
+#     # puts b.bomb_count(7, 6)
+#     b.render
+#     b.reveal_all
+#     b.render
+# end
