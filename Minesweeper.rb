@@ -42,6 +42,8 @@ class Minesweeper
         end
         @board.reveal_all
         @board.render
+        puts ["You've been blown to smithereens!", "They're still looking for pieces of you in the bushes!", "You're red mist"].sample(1) if @board.lose?
+        puts "Nicely done, cleared it!" if @board.win?
         puts "Wow, that was exciting to watch, but I imagine it was"
         puts "stress-inducing to play! But hey, a little stress can be good for"
         puts "the soul (I don't know, I made that up). Either way, you up for"
@@ -76,6 +78,6 @@ end
 
 if $PROGRAM_NAME == __FILE__
     sweep = Minesweeper.new
-    sweep.locate
+    # sweep.locate
     sweep.play
 end

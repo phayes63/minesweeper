@@ -210,11 +210,13 @@ class Board
                 return false if !col.revealed && !col.is_bomb
             end
         end
+        puts "Nicely done, cleared it!" if self.win?
         return true
     end
 
     def lose?
         @grid.any? { |row| row.any? { |tile| tile.is_bomb && tile.revealed }}
+        puts ["You've been blown to smithereens!", "They're still looking for pieces of you in the bushes!", "You're red mist"].sample(1) if self.lose?
     end
 
     def game_over?
