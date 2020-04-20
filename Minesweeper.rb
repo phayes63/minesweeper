@@ -64,9 +64,18 @@ class Minesweeper
         (0..8).to_a.include?(Integer(x)) && (0..8).to_a.include?(Integer(y)) && guess.length == 2
     end
 
+    # JUST FOR TESTING WINS
+    # def locate
+    #     bombs = []
+    #     @board.grid.each_with_index do |row, i_1|
+    #         row.each_with_index { |col, i_2| bombs << [i_1, i_2] if col.is_bomb }
+    #     end
+    #     print bombs
+    # end
 end
 
 if $PROGRAM_NAME == __FILE__
     sweep = Minesweeper.new
+    sweep.locate
     sweep.play
 end

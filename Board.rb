@@ -34,10 +34,19 @@ class Board
         puts "Minesweeper".center(20)
         puts "-" * 20
         puts "  0 1 2 3 4 5 6 7 8"
-        (0..8).each do |row_idx|
-            print row_idx.to_s
-            @grid.each { |row| print row[row_idx].face.rjust(2) }
+        # (0..8).each do |row_idx|
+        #     print row_idx.to_s
+        #     @grid.each { |row| print row[row_idx].face.rjust(2) }
+        #     puts "\n"
+        # end
+        i = 0
+        @grid.each do |row|
+            print i
+            (0..8).each do |row_idx|
+                print row[row_idx].face.rjust(2)
+            end
             puts "\n"
+            i += 1
         end
         puts "-" * 20
     end
@@ -60,38 +69,45 @@ class Board
     end
 
     def valid_right_of_tile(row, col)
-        @grid[row][col + 1].is_bomb && @grid[row][col + 1] != nil && col != 8
+        return false if col == 8
+        @grid[row][col + 1].is_bomb && @grid[row][col + 1] != nil
     end
 
     def valid_left_of_tile(row, col)
-        @grid[row][col - 1].is_bomb && @grid[row][col - 1] != nil && col != 0
+        return false if col == 0
+        @grid[row][col - 1].is_bomb && @grid[row][col - 1] != nil
     end
 
     def valid_above_tile(row, col)
-        @grid[row + 1][col].is_bomb && @grid[row + 1][col] != nil && row != 8
+        return false if row == 8
+        @grid[row + 1][col].is_bomb && @grid[row + 1][col] != nil
     end
 
     def valid_below_tile(row, col)
-        @grid[row - 1][col].is_bomb && @grid[row - 1][col] != nil && row != 0
+        return false if row == 0
+        @grid[row - 1][col].is_bomb && @grid[row - 1][col] != nil
     end
 
     def valid_down_right_of_tile(row, col)
-        @grid[row + 1][col + 1].is_bomb && @grid[row + 1][col + 1] != nil && (row != 8 && col != 8)
+        return false if row == 8 || col == 8
+        @grid[row + 1][col + 1].is_bomb && @grid[row + 1][col + 1] != nil
     end
 
     def valid_down_left_of_tile(row, col)
-        @grid[row + 1][col - 1].is_bomb && @grid[row + 1][col - 1] != nil && (row != 8 && col != 0)
+        return false if row == 8 || col == 0
+        @grid[row + 1][col - 1].is_bomb && @grid[row + 1][col - 1] != nil
     end
 
     def valid_up_right_of_tile(row, col)
-        @grid[row - 1][col + 1].is_bomb && @grid[row - 1][col + 1] != nil && (row != 0 && col != 8)
+        return false if row == 0 || col == 8
+        @grid[row - 1][col + 1].is_bomb && @grid[row - 1][col + 1] != nil
     end
 
     def valid_up_left_of_tile(row, col)
-        @grid[row - 1][col - 1].is_bomb && @grid[row - 1][col - 1] != nil && (row != 0 && col != 0)
+        return false if row == 0 || col == 0
+        @grid[row - 1][col - 1].is_bomb && @grid[row - 1][col - 1] != nil
     end
 
-    # STILL WORKING ON FIGURING THIS OUT...
     def reveal(row, col)
         self[row, col].reveal
         search_row(row, col)
@@ -189,7 +205,12 @@ class Board
     end
 
     def win?
-        @grid.all? { |row| row.all? { |tile| tile.revealed && !tile.is_bomb } }
+        @grid.each do |row|
+            row.each do |col|
+                return false if !col.revealed && !col.is_bomb
+            end
+        end
+        return true
     end
 
     def lose?

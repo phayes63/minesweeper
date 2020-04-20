@@ -23,7 +23,7 @@ class Tile
     end 
 
     def proximity(bomb_count)
-        @face = bomb_count.to_s
+        @face = bomb_count.to_s if @revealed == false
     end
 
     def make_bomb
