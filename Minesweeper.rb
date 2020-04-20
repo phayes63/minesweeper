@@ -34,7 +34,7 @@ class Minesweeper
             guess = gets.chomp.split(",")
             if self.is_valid_guess?(guess) 
                 @board.reveal(Integer(guess[0]), Integer(guess[1]))
-            else
+            elsif !self.is_valid_guess?(guess)
                 puts ""
                 puts "Hmmm something went wrong there. Did you stay in range and use a comma? Try again..."
                 puts ""
@@ -43,7 +43,7 @@ class Minesweeper
         @board.reveal_all
         @board.render
         puts ["You've been blown to smithereens!", "They're still looking for pieces of you in the bushes!", "You're red mist"].sample(1) if @board.lose?
-        puts "Nicely done, cleared it!" if @board.win?
+        puts "Nicely done, cleared it!" if !@board.lose?
         puts "Wow, that was exciting to watch, but I imagine it was"
         puts "stress-inducing to play! But hey, a little stress can be good for"
         puts "the soul (I don't know, I made that up). Either way, you up for"
@@ -64,6 +64,7 @@ class Minesweeper
     def is_valid_guess?(guess)
         x, y = guess
         (0..8).to_a.include?(Integer(x)) && (0..8).to_a.include?(Integer(y)) && guess.length == 2
+        return true
     end
 
     # JUST FOR TESTING WINS
