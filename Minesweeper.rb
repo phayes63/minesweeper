@@ -2,6 +2,8 @@ require_relative "board"
 
 class Minesweeper
 
+    ALPHA = ("a".."z").to_a + ("A".."Z").to_a
+
     def initialize
         @board = Board.new
     end
@@ -63,6 +65,7 @@ class Minesweeper
 
     def is_valid_guess?(guess)
         x, y = guess
+        return false if ALPHA.include?(x) || ALPHA.include?(y)
         (0..8).to_a.include?(Integer(x)) && (0..8).to_a.include?(Integer(y)) && guess.length == 2
         return true
     end

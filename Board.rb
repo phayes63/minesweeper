@@ -4,6 +4,8 @@ class Board
 
     attr_reader :grid, :make_pairs
 
+    ALPHA = ("a".."z").to_a + ("A".."Z").to_a
+
     def initialize
         @grid = Array.new(9) {Array.new(9)}
         (0..8).each do |tile|
