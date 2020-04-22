@@ -4,8 +4,6 @@ class Board
 
     attr_reader :grid, :make_pairs
 
-    ALPHA = ("a".."z").to_a + ("A".."Z").to_a
-
     def initialize
         @grid = Array.new(9) {Array.new(9)}
         (0..8).each do |tile|
@@ -33,14 +31,9 @@ class Board
 
     def render
         puts ""
-        puts "Minesweeper".center(20)
+        puts "Minesweeper".center(20).colorize(:blue)
         puts "-" * 20
         puts "  0 1 2 3 4 5 6 7 8"
-        # (0..8).each do |row_idx|
-        #     print row_idx.to_s
-        #     @grid.each { |row| print row[row_idx].face.rjust(2) }
-        #     puts "\n"
-        # end
         i = 0
         @grid.each do |row|
             print i
