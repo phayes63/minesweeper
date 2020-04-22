@@ -4,8 +4,10 @@ class Minesweeper
 
     ALPHA = ("a".."z").to_a + ("A".."Z").to_a
 
-    def initialize
-        @board = Board.new
+    attr_reader :board
+
+    def initialize(board = Board.new)
+        @board = board
     end
 
     def instructions
@@ -41,6 +43,7 @@ class Minesweeper
                 puts "Hmmm something went wrong there. Did you stay in range and use a comma? Try again..."
                 puts ""
             end
+            File.open("sweep.yml", "w") { |file| file.write(@board.to_yaml) }
         end
         @board.reveal_all
         @board.render
@@ -78,10 +81,25 @@ class Minesweeper
     #     end
     #     print bombs
     # end
+    def run
+        print "New game or picking up from earlier? Enter new or return: "
+        response = gets.chomp
+        if response == "new"
+            sweep = Minesweeper.new
+            File.open("sweep.yml", "w") { |file| file.write(@board.to_yaml) }
+            while !self.board.game_over?
+            save = board_from_yaml_file = YAML.load(File.read("sweep.yml"))
+            self.play
+            end
+        end 
+        if response == "return"
+            board = YAML.load(File.read("sweep.yml"))
+            pickup = Minesweeper.new(board)
+            pickup.play
+        end
+    end
+
 end
 
-if $PROGRAM_NAME == __FILE__
-    sweep = Minesweeper.new
-    # sweep.locate
-    sweep.play
-end
+sweep = Minesweeper.new
+sweep.run

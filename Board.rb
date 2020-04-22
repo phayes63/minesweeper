@@ -1,4 +1,5 @@
 require_relative "tile"
+require "yaml"
 
 class Board
 

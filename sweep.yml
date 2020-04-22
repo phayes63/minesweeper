@@ -1,0 +1,650 @@
+--- !ruby/object:Board
+grid:
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '2'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
