@@ -36,12 +36,17 @@ class Minesweeper
             puts ""
             print "Time to roll the dice. Enter your guess (for example 2,4): "
             guess = gets.chomp.split(",")
-            if self.is_valid_guess?(guess) 
-                @board.reveal(Integer(guess[0]), Integer(guess[1]))
-            elsif !self.is_valid_guess?(guess)
-                puts ""
-                puts "Hmmm something went wrong there. Did you stay in range and use a comma? Try again..."
-                puts ""
+            if guess.length == 3 && (guess[2] == "f" || guess[2] == "F")
+                if self.is_valid_guess?(guess[0...2])
+                    p1, p2, flag = Integer(guess[0]), Integer(guess[1]), guess[2]
+                    @board[p1, p2].flag
+                end
+            elsif guess.length == 2
+                if self.is_valid_guess?(guess) 
+                    @board.reveal(Integer(guess[0]), Integer(guess[1]))
+                end
+            else
+                self.invalid_message
             end
             File.open("sweep.yml", "w") { |file| file.write(@board.to_yaml) }
         end
@@ -66,11 +71,24 @@ class Minesweeper
         end
     end
 
+    def invalid_message
+        puts ""
+        puts "Hmmm something went wrong there. Did you stay in range and use a comma? Try again..."
+        puts ""
+    end
+
     def is_valid_guess?(guess)
         x, y = guess
-        return false if ALPHA.include?(x) || ALPHA.include?(y)
-        (0..8).to_a.include?(Integer(x)) && (0..8).to_a.include?(Integer(y)) && guess.length == 2
-        return true
+        if ALPHA.include?(x) || ALPHA.include?(y)
+            self.invalid_message
+            return false
+        end
+        if (0..8).to_a.include?(Integer(x)) && (0..8).to_a.include?(Integer(y)) && guess.length == 2
+            return true
+        else
+            self.invalid_message
+            return false
+        end
     end
 
     # JUST FOR TESTING WINS

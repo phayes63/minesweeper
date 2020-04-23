@@ -2,12 +2,116 @@
 grid:
 - - !ruby/object:Tile
     start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '2'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - true
+    - false
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
     face: "*"
     is_bomb: false
     flagged:
     - false
     - true
     revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: true
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "!"
+    is_bomb: true
+    flagged:
+    - true
+    - false
+    revealed: true
   - !ruby/object:Tile
     start_symbol: "*"
     face: '1'
@@ -26,39 +130,7 @@ grid:
     revealed: true
   - !ruby/object:Tile
     start_symbol: "*"
-    face: _
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: true
-  - !ruby/object:Tile
-    start_symbol: "*"
     face: '1'
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
     is_bomb: false
     flagged:
     - false
@@ -75,27 +147,11 @@ grid:
 - - !ruby/object:Tile
     start_symbol: "*"
     face: "*"
-    is_bomb: true
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: '1'
     is_bomb: false
     flagged:
     - false
     - true
     revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: _
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: true
   - !ruby/object:Tile
     start_symbol: "*"
     face: _
@@ -114,15 +170,7 @@ grid:
     revealed: false
   - !ruby/object:Tile
     start_symbol: "*"
-    face: "*"
-    is_bomb: true
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
+    face: '2'
     is_bomb: false
     flagged:
     - false
@@ -130,28 +178,12 @@ grid:
     revealed: false
   - !ruby/object:Tile
     start_symbol: "*"
-    face: "*"
-    is_bomb: true
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
+    face: _
     is_bomb: false
     flagged:
     - false
     - true
-    revealed: false
-- - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
+    revealed: true
   - !ruby/object:Tile
     start_symbol: "*"
     face: '2'
@@ -184,41 +216,41 @@ grid:
     - false
     - true
     revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: true
-    flagged:
-    - false
-    - true
-    revealed: false
 - - !ruby/object:Tile
     start_symbol: "*"
     face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - true
+    - false
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '1'
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: '2'
     is_bomb: false
     flagged:
     - false
@@ -256,79 +288,7 @@ grid:
     - false
     - true
     revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
 - - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: _
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: true
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
     start_symbol: "*"
     face: "*"
     is_bomb: false
@@ -346,7 +306,7 @@ grid:
     revealed: false
   - !ruby/object:Tile
     start_symbol: "*"
-    face: "*"
+    face: '2'
     is_bomb: false
     flagged:
     - false
@@ -355,12 +315,12 @@ grid:
   - !ruby/object:Tile
     start_symbol: "*"
     face: "*"
-    is_bomb: false
+    is_bomb: true
     flagged:
     - false
     - true
     revealed: false
-- - !ruby/object:Tile
+  - !ruby/object:Tile
     start_symbol: "*"
     face: "*"
     is_bomb: false
@@ -400,6 +360,86 @@ grid:
     - false
     - true
     revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: _
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: true
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
   - !ruby/object:Tile
     start_symbol: "*"
     face: "*"
@@ -428,14 +468,6 @@ grid:
     start_symbol: "*"
     face: "*"
     is_bomb: true
-    flagged:
-    - false
-    - true
-    revealed: false
-- - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
     flagged:
     - false
     - true
@@ -472,6 +504,54 @@ grid:
     - false
     - true
     revealed: false
+- - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
+  - !ruby/object:Tile
+    start_symbol: "*"
+    face: "*"
+    is_bomb: false
+    flagged:
+    - false
+    - true
+    revealed: false
   - !ruby/object:Tile
     start_symbol: "*"
     face: "*"
@@ -492,14 +572,6 @@ grid:
     start_symbol: "*"
     face: "*"
     is_bomb: true
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
     flagged:
     - false
     - true
@@ -547,79 +619,7 @@ grid:
   - !ruby/object:Tile
     start_symbol: "*"
     face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-- - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
     is_bomb: true
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
-    flagged:
-    - false
-    - true
-    revealed: false
-  - !ruby/object:Tile
-    start_symbol: "*"
-    face: "*"
-    is_bomb: false
     flagged:
     - false
     - true

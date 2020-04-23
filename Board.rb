@@ -210,7 +210,7 @@ class Board
     end
 
     def lose?
-        @grid.any? { |row| row.any? { |tile| tile.is_bomb && tile.revealed }}
+        @grid.any? { |row| row.any? { |tile| tile.is_bomb && tile.revealed && tile.face != "F" }}
     end
 
     def game_over?
